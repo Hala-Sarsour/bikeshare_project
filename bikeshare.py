@@ -28,7 +28,7 @@ def get_filters():
     
     else:
         if(choice=='day'):
-            days=["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday","all"];
+            days=["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday","all"]
             print('which day would you like to filter to (all, monday, tuesday, ... sunday)')
             day=input()
             while day.lower() not in days: 
@@ -68,7 +68,7 @@ def time_stats(df):
     print(f"the most common day of the week is:{df['day_of_week'].mode()[0]}")
     # TO DO: display the most common start hour
     print(f"the most common start hour:{df['hour'].mode()[0]}")
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % ((time.time() - start_time).round()))
     print('-'*40)
 
 
@@ -87,7 +87,7 @@ def station_stats(df):
     df['combination']=df['Start Station']+' to '+df['End Station']
     # TO DO: display most frequent combination of start station and end station trip
     print(f"the most commonly used combination of start station and end station is:{df['combination'].mode()[0]}")
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % ((time.time() - start_time).round()))
     print('-'*40)
 
 
@@ -101,7 +101,7 @@ def trip_duration_stats(df):
     print(f"the total travel time in hours:{(df['Trip Duration'].sum()/3600).round()}")
     # TO DO: display mean travel time
     print(f"the average travel time:{(df['Trip Duration'].mean()).round()}")
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % ((time.time() - start_time).round()))
     print('-'*40)
 
 
@@ -128,7 +128,7 @@ def user_stats(df):
 
 
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % ((time.time() - start_time).round()))
     print('-'*40)
 
 def display_rawdata(df):
